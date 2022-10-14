@@ -1,0 +1,686 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#myBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: #c00; 
+    color: white; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 10px; 
+    font-size: 18px; 
+}
+
+.intro {
+    height: 100vh;
+    width: 100%;
+    background: url(./img/website-design-background-1.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+    z-index: 999;
+    width: 100%;
+    background-color: rgb(64, 64, 64);
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    padding: 1px 1px;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 13px 25px 10px 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #c00;
+    transition: 0.4s;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.content .name {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 50px;
+    
+}
+
+.typing{
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 25px;
+    letter-spacing: .15em;
+    animation: 
+    typing 5s steps(500, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.content button {
+    width: 15%;
+    height: 55px;
+    margin-top: 40px;
+
+    font-size: 20px;
+    background-color: #c00;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid #c00;
+
+    font-weight: 700;
+}
+
+.content button:hover {
+    background-color: white;
+    color: #c00;
+    transition: 0.8s;
+}
+
+.about {
+    background-color:rgb(0, 0, 0);
+}
+
+.about .title {
+    width: 20%;
+    margin: auto;
+    padding: 80px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-family: Montserrat,sans-serif;
+}
+
+.about .title p {
+    font-size: 150%;
+}
+
+.title .red-line {
+    background-color: #c00;
+    height: 2px;
+    text-align: center;
+}
+
+.about .details{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .details .image {
+    width: 45%;
+    text-align: center;
+}
+
+.about .details .image img {
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.about .details .description {
+    width: 55%;
+    text-align: justify;
+}
+
+.description .f1-des{
+    color: white;
+}
+
+.description h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    /* animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end ; */
+}
+
+/* .description h1 */
+
+@keyframes typing {
+    from { width: 10% }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    20% { border-color: crimson; }
+}
+
+
+.description p {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.contact-details h5 {
+    margin: 50px 20px 20px 20px;
+    color: #c00;
+}
+
+.contact-details p {
+    margin-left: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+
+.education .title {
+    width: 23%;
+    margin: auto;
+    padding: 80px;
+    color: #c00;
+    text-align: center;
+    font-weight: 600;
+    font-family: Montserrat,sans-serif;
+}
+
+.education .title p {
+    font-size: 150%;
+}
+
+
+.education .column{
+    flex:1 1 40rem;
+    margin:1rem;
+    padding:2rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    width: 70%;
+    margin: auto;
+}
+
+.education .column .title{
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.education .column .box{
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;
+    border-left: .2rem solid var(--pink);
+    position: relative;
+}
+
+.education .column .box::before{
+    content: '';
+    position: absolute;
+    top:.1rem; left: -1.1rem;
+    height:2rem;
+    width:2rem;
+    border-radius: 50%;
+}
+
+.education .column .box .year{
+    font-size: 1.5rem;
+    color:#c00;
+    padding-bottom: .5rem;
+}
+
+.education .column .box .year i{
+    padding-right: .5rem;
+}
+
+.education .column .box h3{
+    color:#333;
+    font-size: 2rem;
+}
+
+.education .column .box p{
+    color:#666;
+    font-size: 1.5rem;
+    padding-top: .5rem;
+}
+
+
+.project {
+    background-color: black;
+}
+
+.project .title {
+    width: 20%;
+    margin: auto;
+    padding: 80px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 600;
+    font-family: Montserrat,sans-serif;
+}
+
+.project .title p {
+    font-size: 150%;
+}
+
+.project .text {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 3rem 3rem 0rem 3rem;
+}
+
+.projects .project-item {
+    position: relative;
+}
+
+.projects .project-item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.projects .project-item .hover-items {
+    width: 100%;
+    height: 100%;
+    background-color: #c00;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .4s ease-in-out;
+}
+
+.projects .project-item .hover-items h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.projects .project-item .hover-items .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project .project-item .hover-items .icons .icon {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.project .project-item .hover-items .icons .icon i {
+    font-size: 1.5rem;
+    color: black;
+    margin: 0 1rem;
+}
+
+.project .project-item .hover-items .icons .icon i:hover {
+    background-color: white;
+}
+
+.project-item:hover .hover-items {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.my-skill {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./img/skills.avif);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.my-skill .title {
+    width: 20%;
+    margin: auto;
+    padding: 80px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 600;
+    font-family: Montserrat,sans-serif;
+}
+
+.my-skill .title p {
+    font-size: 150%;
+}
+
+.my-skill .text {
+    text-align: center;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.skills{
+    width: 70%;
+    margin: auto;
+    z-index: 1;
+}
+  
+.skill-name{
+    font-size: 18px;
+    font-weight: 700;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+  
+.skill-bar{
+    height: 14px;
+    background: #282828;
+    border-radius: 3px;
+}
+  
+.skill-pers{
+    height: 14px;
+    background: #c00;
+    border-radius: 3px;
+    position: relative;
+    animation: fillBars 2.5s 1;
+}
+  
+.skill-pers::before{
+    content: attr(per);
+    position: absolute;
+    padding: 8px 10px;
+    background: #f1f1f1;
+    border-radius: 4px;
+    font-size: 12px;
+    top: -43px;
+    right: 0;
+    transform: translateX(50%);
+}
+  
+.skill-pers::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f1f1f1;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+}
+  
+@keyframes fillBars{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+.contact {
+    height: 90vh;
+}
+
+.contact .title {
+    width: 22%;
+    margin: auto;
+    padding: 80px;
+    text-align: center;
+    font-weight: 600;
+    font-family: Montserrat,sans-serif;
+}
+
+.contact .title p {
+    font-size: 150%;
+    margin: auto;
+    color: black;
+}
+
+.contact .text {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px;
+}
+
+.contact .max-width {
+    width: 50%;
+    margin: auto;
+}
+.contact form .fields{
+    display: flex;
+}
+.contact form .field,
+.contact form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact form .name{
+    margin-right: 10px;
+}
+.contact form .field input,
+.contact form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact form .field input:focus,
+.contact form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact form .button-area{
+    display: flex;
+    align-items: center;
+}
+form .button-area button{
+    color: #fff;
+    display: block;
+    width: 160px!important;
+    height: 45px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    background: #c00;
+    border: 2px solid #c00;
+    transition: all 0.3s ease;
+}
+form .button-area button:hover{
+    color: #c00;
+    background: none;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    height: 10vh;
+    text-align: center;    
+}
+
+.footer .rights {
+    margin-top: 10px;
+}
+
+.footer-icons {
+    background-color: black;
+}
+
+.footer-icons i {
+    font-size: 30px;
+    margin: 10px;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: 1px solid #c00; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #c00; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+  
+#myBtn:hover {
+    background-color: white;
+    color: #c00; /* Add a dark-grey background on hover */
+}
+
+
+/* responsive */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+  
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+  
+.sidenav a:hover {
+    color: #666666;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.responsive-nav {
+    display: none;
+}
+
+@media only screen and (max-width: 1080px) {
+    
+    .responsive-nav {
+        margin-top: 20px;
+        padding: 50px;
+        display: block;
+        font-size:30px;
+        cursor:pointer;  
+        color: white;
+    }
+
+    #navbar {
+        display: none;
+    }
+    
+    .sidenav {
+        padding-top: 15px;
+    }
+    
+    .sidenav a {
+        font-size: 14px;
+    }
+
+    .content {
+        width:fit-content;
+        height: 50%;
+    }
+
+    .content .typing {
+        margin-top: 10px;
+        font-size: 140%;
+    }
+
+    
+    
+}
